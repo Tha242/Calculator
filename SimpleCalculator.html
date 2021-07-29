@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCalculator</title>
+    <script>
+        function calc(){
+                //var result=Number(document.getElementById('num1').value) + Number(document.getElementById('num2').value);
+                //document.write("Answer : "+ result);
+            if (document.getElementById('sign2').checked ){
+                var result=Number(document.getElementById('num1').value) - Number(document.getElementById('num2').value);
+                document.write("Answer : "+ result);
+                
+            // }else if (document.getElementById('sign').value == "" ){
+            //     var result=Number(document.getElementById('num1').value) - Number(document.getElementById('num2').value);
+            //     form.elements["tha"].innerHTML = form.elements["num1"].value + "-" + form.elements["num2"] + "=" + result;
+            }else if (document.getElementById('sign3').checked){
+                var result=Number(document.getElementById('num1').value) * Number(document.getElementById('num2').value);
+                document.write("Answer : "+ result);
+            }else if (document.getElementById('sign4').checked){
+                var result=Number(document.getElementById('num1').value) / Number(document.getElementById('num2').value);
+                document.getElementById('tha').innerHTML = result;
+            }else{
+                alert("Hey guy, Please enter full information!");
+            }
+            
+
+        }
+    </script>
+</head>
+<body>
+    <form style="display: grid;width: 20%;">
+        <label for="num1">Enter Num1 : </label>
+        <input type="number" placeholder="Num1" id="num1"><br><br>
+        <!-- <label>Select Sign : </label> 
+        <input type="text"  id="sign"><br> -->
+        <input type="radio" name="math" value="add" id="sign" checked>+
+        <input type="radio" name="math" value="subtract" id="sign2">-
+        <input type="radio" name="math" value="multiply" id="sign3">*
+        <input type="radio" name="math" value="divide" id="sign4">/<br> <br>
+        <!-- <select id="sign">
+            <option vale="+">+</option>
+            <option vale="-">-</option>
+            <option vale="*">*</option>
+            <option vale="/">/</option>
+        </select>&nbsp;<br> <br> -->
+        <label for="num2">Enter Num2 : </label>
+        <input type="number" placeholder="Num2" id="num2"><br><br>
+        <input type="button" value="calculate" onclick="calc();"><br><br>
+    </form>
+    <h3 id="tha"></h3>
+</body>
+</html>
